@@ -1,0 +1,21 @@
+{
+  "name": "parallastic",
+  "version": "1.0.2",
+  "description": "A simple helper to make parallax and scroll effects easier.",
+  "main": "build/parallastic.js",
+  "scripts": {
+    "prepublish": "babel src/ -d build/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/glue-gl/parallastic.git"
+  },
+  "author": "Glue.gl",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "dependencies": {}
+}
