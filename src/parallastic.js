@@ -1,4 +1,4 @@
-export const parallastic = (scrollable = window) => {
+const parallastic = (scrollable = window) => {
   const listeners = []
   const eventTarget = scrollable
   const propertyProvider = scrollable === window ? document.body : scrollable
@@ -77,4 +77,4 @@ export const parallastic = (scrollable = window) => {
   }
 }
 
-export default parallastic
+module.exports = parallastic
