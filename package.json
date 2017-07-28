@@ -1,6 +1,6 @@
 {
   "name": "parallastic",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple helper to make parallax and scroll effects easier.",
   "main": "build/parallastic.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/glue-gl/parallastic.git"
+    "url": "https://github.com/GlueDigital/parallastic"
   },
   "author": "Glue.gl",
   "license": "ISC",
