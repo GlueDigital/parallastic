@@ -73,7 +73,8 @@ const parallastic = (scrollable = window) => {
   return {
     addToggler: addToggler,
     addProportional: addProportional,
-    removeListener: removeListener
+    removeListener: removeListener,
+    forceUpdate: handleScroll
   }
 }
 
