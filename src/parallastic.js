@@ -6,13 +6,15 @@ const parallastic = (scrollable = window) => {
   const handleScroll = (e) => {
     const toRemove = []
     // Give every listener a chance
-    for (const listener of listeners) {
+    for (let i = 0; i < listeners.length; i++) {
+      const listener = listeners[i]
       const ret = listener(e)
       if (ret) toRemove.push(listener)
     }
     // Remove the ones which reported they are done
     // (Not removed before because can't remove during for on same array)
-    for (const listener of toRemove) {
+    for (let i = 0; i < toRemove.length; i++) {
+      const listener = toRemove[i]
       removeListener(listener)
     }
   }
