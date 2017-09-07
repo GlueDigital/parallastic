@@ -24,13 +24,15 @@ Example:
 Adds a new event that toggles a class when a element reaches a certain point on the window.
 
 Args:
- - target: The element which will be toggled
+ - target: The element whose position we'll consider
  - className: The class that will be added
  - position: The percentage of the viewport height (as a value between 0 and 100) at which the change will be triggered
- - reverse: Wether or not the class should be removed on opposite direction scroll
+ - opts: Object with other options:
+    - reverse: Whether or not the class should be removed on opposite direction scroll
+    - classTarget: The element that receives the class (defaults to target)
 
 Example:
- > handler.addToggler(document.getElementById('header'), 'fixed', 0, true)
+ > handler.addToggler(document.getElementById('header'), 'fixed', 0, {reverse: true})
 
 ### addProportional
 Adds a new event that makes a change to some property proportionally to the scrolled amount.

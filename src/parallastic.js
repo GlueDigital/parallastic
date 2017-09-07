@@ -36,16 +36,19 @@ const parallastic = (scrollable = window) => {
     return func
   }
 
-  const addToggler = (target, className, position, reverse) => {
+  const addToggler = (target, className, position, opts = {}) => {
+    // Accept previous "reverse" parameter for now
+    if (opts === true) opts = { reverse: true }
+    const classTarget = opts.classTarget || target
     // Add the listener and return it so it can be removed
     return addListener((e) => {
       const delta = target.getBoundingClientRect().top
       const percent = 1 - delta / propertyProvider.clientHeight
       if (percent >= position) {
-        target.classList.add(className)
-        return !reverse
-      } else if (reverse) {
-        target.classList.remove(className)
+        classTarget.classList.add(className)
+        return !opts.reverse
+      } else if (opts.reverse) {
+        classTarget.classList.remove(className)
       }
     })
   }
