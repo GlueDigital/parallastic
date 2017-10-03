@@ -1,6 +1,6 @@
 {
   "name": "parallastic",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A simple helper to make parallax and scroll effects easier.",
   "main": "build/parallastic.js",
   "scripts": {

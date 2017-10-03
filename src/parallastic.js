@@ -65,7 +65,8 @@ const parallastic = (scrollable = window) => {
       thisYStart += ref.offsetTop
       thisYEnd += ref.offsetTop
       if (opts.ref) thisYStart -= propertyProvider.clientHeight
-      let percent = (propertyProvider.scrollTop - thisYStart) / (thisYEnd - thisYStart)
+      const scrollTop = propertyProvider.scrollTop || window.scrollY
+      let percent = (scrollTop - thisYStart) / (thisYEnd - thisYStart)
       if (percent < 0) percent = 0
       if (percent > 1) percent = 1
       let value = propertyStart + percent * (propertyEnd - propertyStart)
