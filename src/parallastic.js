@@ -37,6 +37,10 @@ const parallastic = (scrollable = window) => {
   }
 
   const addToggler = (target, className, position, opts = {}) => {
+    if (!target) {
+      console.warn('AddToggler: No target specified.')
+      return
+    }
     // Accept previous "reverse" parameter for now
     if (opts === true) opts = { reverse: true }
     const classTarget = opts.classTarget || target
@@ -54,6 +58,10 @@ const parallastic = (scrollable = window) => {
   }
 
   const addProportional = (target, yStart, yEnd, property, propertyStart, propertyEnd, opts = {}) => {
+    if (!target) {
+      console.warn('AddProportional: No target specified.')
+      return
+    }
     return addListener((e) => {
       const ref = opts.ref || propertyProvider
       let thisYStart = yStart
