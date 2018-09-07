@@ -36,6 +36,13 @@ const parallastic = (scrollable = window) => {
     return func
   }
 
+  const teardown = () => {
+    if (listeners.length > 0) {
+      eventTarget.removeEventListener('scroll', handleScroll)
+    }
+    listeners.splice(0, listeners.length)
+  }
+
   const addToggler = (target, className, position, opts = {}) => {
     if (!target) {
       console.warn('AddToggler: No target specified.')
@@ -88,7 +95,8 @@ const parallastic = (scrollable = window) => {
     addToggler: addToggler,
     addProportional: addProportional,
     removeListener: removeListener,
-    forceUpdate: handleScroll
+    forceUpdate: handleScroll,
+    teardown: teardown
   }
 }
 
